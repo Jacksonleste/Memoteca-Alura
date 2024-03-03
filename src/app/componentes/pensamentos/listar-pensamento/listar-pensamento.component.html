@@ -1,0 +1,18 @@
+<section class="container">
+  <header class="header d-flex">
+    <h2 class="ff-inter">Meu mural</h2>
+    <button
+      [routerLink]="['/pensamento/criar']"
+      routerLinkActive="router-link-active"
+      class="botao"
+    >
+      Adicionar pensamento
+    </button>
+  </header>
+  <div class="mural">
+    <app-pensamento
+      *ngFor="let pensamento of listaPensamentos"
+      [pensamento]="pensamento"
+    ></app-pensamento>
+  </div>
+</section>

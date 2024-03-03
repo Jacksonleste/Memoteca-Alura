@@ -11,7 +11,7 @@
       rows="10"
       class="input"
       placeholder="Digite o Pensamento"
-      [value]="pensamento.conteudo"
+      [(ngModel)]="pensamento.conteudo"
     ></textarea>
 
     <label for="autoria"></label>
@@ -22,14 +22,14 @@
       rows="10"
       class="input"
       placeholder="Digite a autoria"
-      [value]="pensamento.autoria"
+      [(ngModel)]="pensamento.autoria"
     ></textarea>
 
     <label for="modelo">Selecione o modelo do card</label>
     <div class="container-radio">
       <div class="radio-modelo">
         <label for="modelo1">
-          <input type="radio" id="modelo1" name="modelo-card" value="modelo1" />
+          <input type="radio" id="modelo1" name="modelo-card" value="modelo1" [(ngModel)]="pensamento.modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -46,11 +46,11 @@
       </div>
       <div class="radio-modelo">
         <label for="modelo2">
-          <input type="radio" id="modelo2" name="modelo-card" value="modelo2" />
+          <input type="radio" id="modelo2" name="modelo-card" value="modelo2" [(ngModel)]="pensamento.modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
-          <span>Modelo 1</span>
+          <span>Modelo 2</span>
         </label>
         Prévia:
         <div class="modelo modelo2 ff-roboto-mono">
@@ -66,11 +66,11 @@
       </div>
       <div class="radio-modelo">
         <label for="modelo3">
-          <input type="radio" id="modelo3" name="modelo-card" value="modelo3" />
+          <input type="radio" id="modelo3" name="modelo-card" value="modelo3" [(ngModel)]="pensamento.modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
-          <span>Modelo 1</span>
+          <span>Modelo 3</span>
         </label>
         Prévia:
         <div class="modelo modelo3 ff-roboto-mono">
@@ -86,8 +86,8 @@
       </div>
     </div>
     <div class="acoes">
-      <button class="botao">Salvar</button>
-      <button class="botao">Cancelar</button>
+      <button (click)="criarPensamento()" class="botao">Salvar</button>
+      <button [routerLink]="['/']" routerLinkActive="router-link-active"  class="botao">Cancelar</button>
     </div>
   </form>
 </section>
