@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PensamentoComponent } from '../pensamento/pensamento.component';
 import { Pensamento } from '../pensamento';
+import { PensamentoService } from '../pensamento.service';
 @Component({
   selector: 'app-listar-pensamento',
   standalone: true,
@@ -12,4 +13,12 @@ import { Pensamento } from '../pensamento';
 })
 export class ListarPensamentoComponent {
   listaPensamentos:Pensamento[] = [];
+
+  constructor(private service: PensamentoService){}
+
+  ngOnInit(): void{
+    this.service.getPensamentos().subscribe((pensamentos:Pensamento[])=>{
+      this.listaPensamentos = pensamentos
+    })
+  }
 }
