@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
@@ -21,7 +21,8 @@ import { PensamentoService } from './componentes/pensamentos/pensamento.service'
     HttpClientModule,
   ],
   providers: [
-    PensamentoService
+    PensamentoService,
+    Router
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

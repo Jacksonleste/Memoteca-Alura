@@ -12,13 +12,13 @@ import { PensamentoService } from '../pensamento.service';
   styleUrl: './listar-pensamento.component.scss',
 })
 export class ListarPensamentoComponent {
-  listaPensamentos:Pensamento[] = [];
+  listaPensamentos: Pensamento[] = [];
 
-  constructor(private service: PensamentoService){}
+  constructor(private service: PensamentoService) {}
 
-  ngOnInit(): void{
-    this.service.getPensamentos().subscribe((pensamentos:Pensamento[])=>{
-      this.listaPensamentos = pensamentos
-    })
+  ngOnInit(): void {
+    this.service.getPensamentos().subscribe((pensamentos: Pensamento[]) => {
+      this.listaPensamentos = pensamentos;
+    });
   }
 }
