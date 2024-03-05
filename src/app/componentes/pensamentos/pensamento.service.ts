@@ -19,13 +19,18 @@ export class PensamentoService {
     return this.http.post<Pensamento>(this.API, pensamento);
   }
 
-  excluirPensamento(id:string){
-    const api = `${this.API}/${id}`
+  excluirPensamento(id: string): Observable<Pensamento> {
+    const api = `${this.API}/${id}`;
     return this.http.delete<Pensamento>(api);
   }
 
-  buscarPorId(id:string){
-    const api = `${this.API}/${id}`
+  buscarPorId(id: string): Observable<Pensamento> {
+    const api = `${this.API}/${id}`;
     return this.http.get<Pensamento>(api);
+  }
+
+  editarPensamento(id: string, pensamento: Pensamento): Observable<Pensamento> {
+    const api = `${this.API}/${id}`;
+    return this.http.put<Pensamento>(api, pensamento);
   }
 }
