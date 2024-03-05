@@ -18,4 +18,14 @@ export class PensamentoService {
   cadastrarPensamento(pensamento: Pensamento): Observable<Pensamento> {
     return this.http.post<Pensamento>(this.API, pensamento);
   }
+
+  excluirPensamento(id:string){
+    const api = `${this.API}/${id}`
+    return this.http.delete<Pensamento>(api);
+  }
+
+  buscarPorId(id:string){
+    const api = `${this.API}/${id}`
+    return this.http.get<Pensamento>(api);
+  }
 }
