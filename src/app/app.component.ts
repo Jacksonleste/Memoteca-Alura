@@ -7,6 +7,7 @@ import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensam
 import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PensamentoService } from './componentes/pensamentos/pensamento.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { PensamentoService } from './componentes/pensamentos/pensamento.service'
     CriarPensamentoComponent,
     ListarPensamentoComponent,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     PensamentoService,

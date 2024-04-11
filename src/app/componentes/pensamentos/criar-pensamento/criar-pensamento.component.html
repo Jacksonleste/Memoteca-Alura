@@ -2,27 +2,25 @@
   <header class="header">
     <h2>adicone um <br />pensamento novo:</h2>
   </header>
-  <form>
+  <form [formGroup]="formulario">
     <label for="pensamento"></label>
     <textarea
-      name="pensamento"
+      formControlName="conteudo"
       id="pensamento"
       cols="30"
       rows="10"
       class="input"
       placeholder="Digite o Pensamento"
-      [(ngModel)]="pensamento.conteudo"
     ></textarea>
 
     <label for="autoria"></label>
     <textarea
-      name="autoria"
+      formControlName="autoria"
       id="autoria"
       cols="30"
       rows="10"
       class="input"
       placeholder="Digite a autoria"
-      [(ngModel)]="pensamento.autoria"
     ></textarea>
 
     <label for="modelo">Selecione o modelo do card</label>
@@ -32,9 +30,8 @@
           <input
             type="radio"
             id="modelo1"
-            name="modelo-card"
+            formControlName="modeloCard"
             value="modelo1"
-            [(ngModel)]="pensamento.modelo"
           />
           <div class="custom-radio">
             <span></span>
@@ -55,9 +52,8 @@
           <input
             type="radio"
             id="modelo2"
-            name="modelo-card"
+            formControlName="modeloCard"
             value="modelo2"
-            [(ngModel)]="pensamento.modelo"
           />
           <div class="custom-radio">
             <span></span>
@@ -81,9 +77,8 @@
           <input
             type="radio"
             id="modelo3"
-            name="modelo-card"
+            formControlName="modeloCard"
             value="modelo3"
-            [(ngModel)]="pensamento.modelo"
           />
           <div class="custom-radio">
             <span></span>
