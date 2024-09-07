@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Pensamento } from '../pensamento';
 import { PensamentoService } from '../pensamento.service';
@@ -28,21 +34,35 @@ export class CriarPensamentoComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {}
 
-  ngOnInit():void
-  {
-    this.formulario = this.formBuilder.group({
-      conteudo: ['teste conteudo'],
-      autoria: ['Eu  mesmo'],
-      modeloCard: ['modelo2']
-    })
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group(
+      {
+        conteudo: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.pattern(/(.|\s)*\S(.|\s)*/),
+          ]),
+        ],
+        autoria: [
+          '',
+          Validators.compose([Validators.required, Validators.minLength(3)]),
+        ],
+        modelo: ['modelo1'],
+      },
+      { updateOn: 'change' }
+    );
   }
 
   criarPensamento() {
-    let pensamento = this.service
-      .cadastrarPensamento(this.pensamento)
-      .subscribe(() => {
+    console.log(this.formulario.value);
+    if (this.formulario.valid) {
+      this.service.cadastrarPensamento(this.formulario.value).subscribe(() => {
         this.router.navigate(['/pensamento/listar']);
       });
+    } else {
+      console.log('Formulário inválido!');
+    }
   }
 
   cancelar() {
