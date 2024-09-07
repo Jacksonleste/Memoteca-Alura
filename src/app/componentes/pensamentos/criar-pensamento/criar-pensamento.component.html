@@ -12,6 +12,15 @@
       class="input"
       placeholder="Digite o Pensamento"
     ></textarea>
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario?.get('conteudo')?.errors &&
+        formulario?.get('conteudo')?.touched
+      "
+    >
+      Pensamento é obrigatório
+    </div>
 
     <label for="autoria"></label>
     <textarea
@@ -22,6 +31,18 @@
       class="input"
       placeholder="Digite a autoria"
     ></textarea>
+    <div
+      class="mensagem__erro"
+      *ngIf="formulario?.get('autoria')?.errors?.['required'] && formulario?.get('autoria')?.touched"
+    >
+      Autoria é obrigatória
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="formulario.get('autoria')?.errors?.['minlength']?.touched"
+    >
+      Autoria deve ter no mínimo três letras
+    </div>
 
     <label for="modelo">Selecione o modelo do card</label>
     <div class="container-radio">
@@ -41,9 +62,9 @@
         Prévia:
         <div class="modelo modelo1 ff-roboto-mono">
           <img src="../../../../assets/imagens/modelo1.png" alt="Aspas azuis" />
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
+          <p class="conteudo">{{ formulario.get("conteudo")?.value }}</p>
           <p class="autoria">
-            <b>{{ pensamento.autoria }}</b>
+            <b>{{ formulario.get("autoria")?.value }}</b>
           </p>
         </div>
       </div>
@@ -66,9 +87,9 @@
             src="../../../../assets/imagens/modelo2.png"
             alt="Aspas azul claro"
           />
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
+          <p class="conteudo">{{ formulario.get("conteudo")?.value }}</p>
           <p class="autoria">
-            <b>{{ pensamento.autoria }}</b>
+            <b>{{ formulario.get("autoria")?.value }}</b>
           </p>
         </div>
       </div>
@@ -91,16 +112,26 @@
             src="../../../../assets/imagens/modelo3.png"
             alt="Aspas verdes"
           />
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
+          <p class="conteudo">{{ formulario.get("conteudo")?.value }}</p>
           <p class="autoria">
-            <b>{{ pensamento.autoria }}</b>
+            <b>{{ formulario.get("autoria")?.value }}</b>
           </p>
         </div>
       </div>
     </div>
     <div class="acoes">
-      <button (click)="criarPensamento()" class="botao">Salvar</button>
-      <button (click)="cancelar()" routerLinkActive="router-link-active" class="botao">
+      <button
+        (click)="criarPensamento()"
+        [disabled]="!formulario.valid"
+        class="botao"
+      >
+        Salvar
+      </button>
+      <button
+        (click)="cancelar()"
+        routerLinkActive="router-link-active"
+        class="botao"
+      >
         Cancelar
       </button>
     </div>

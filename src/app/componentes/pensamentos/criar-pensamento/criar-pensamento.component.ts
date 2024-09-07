@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import {
   FormsModule,
   FormBuilder,
@@ -15,33 +15,33 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-criar-pensamento',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, RouterLink, ReactiveFormsModule, NgIf],
   templateUrl: './criar-pensamento.component.html',
   styleUrl: './criar-pensamento.component.scss',
 })
 export class CriarPensamentoComponent implements OnInit {
-  pensamento: Pensamento = {
-    conteudo: '',
-    autoria: '',
-    modelo: 'modelo1',
-  };
-
   formulario!: FormGroup;
 
   constructor(
     private service: PensamentoService,
     private router: Router,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+    this.iniciarFormulario();
+  }
 
   ngOnInit(): void {
+
+  }
+
+  iniciarFormulario() {
     this.formulario = this.formBuilder.group(
       {
         conteudo: [
           '',
           Validators.compose([
             Validators.required,
-            Validators.pattern(/(.|\s)*\S(.|\s)*/),
+            Validators.pattern(/(.|\s)*\S(.|\s)*/)
           ]),
         ],
         autoria: [
