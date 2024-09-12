@@ -11,8 +11,8 @@ export class PensamentoService {
 
   constructor(private http: HttpClient) {}
 
-  listarPensamentos(pagina: string): Observable<Pensamento[]> {
-    const limitePagina = '9';
+  listarPensamentos(pagina: number): Observable<Pensamento[]> {
+    const limitePagina = 9;
 
     const params = new HttpParams()
       .set('_page', pagina)
