@@ -7,8 +7,9 @@
         class="filtro"
         autofocus
         [(ngModel)]="filtro"
-        />
-        <img src="/assets/imagens/lupa.png" alt="Lupa Azul">
+        (keyup)="buscarPensamentos()"
+      />
+      <img src="/assets/imagens/lupa.png" alt="Lupa Azul" />
     </div>
     <h2 class="ff-inter">Meu mural</h2>
     <button

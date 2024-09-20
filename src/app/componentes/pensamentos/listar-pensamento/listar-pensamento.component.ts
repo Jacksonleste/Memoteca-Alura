@@ -37,12 +37,22 @@ export class ListarPensamentoComponent {
 
   carregarMaisPensamentos() {
     this.service
-      .listarPensamentos(++this.pagina)
+      .listarPensamentos(++this.pagina, this.filtro)
       .subscribe((pensamentos: Pensamento[]) => {
         this.listaPensamentos.push(...pensamentos);
         if (pensamentos.length == 0) {
           this.haMaisPensamentos = false;
         }
+      });
+  }
+
+  buscarPensamentos() {
+    this.pagina = 1;
+    this.haMaisPensamentos = true;
+    this.service
+      .listarPensamentos(this.pagina, this.filtro)
+      .subscribe((pensamentos) => {
+        this.listaPensamentos = pensamentos;
       });
   }
 }
