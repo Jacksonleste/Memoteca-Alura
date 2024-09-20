@@ -9,5 +9,8 @@
     <button routerLink="/pensamento/excluir/{{pensamento.id}}" routerLinkActive="router-link-active"  class="botao-excluir">
       <img src="../../../../assets/imagens/icone-excluir.png" alt="Ícone de ecluir">
     </button>
+    <button (click)="favoritarItem()"  class="botao-editar">
+      <img src="../../../../assets/imagens/icone-favorito-{{mudarIconeFavorito(pensamento.favorito)}}.png" alt="Ícone de ecluir">
+    </button>
   </div>
 </div>

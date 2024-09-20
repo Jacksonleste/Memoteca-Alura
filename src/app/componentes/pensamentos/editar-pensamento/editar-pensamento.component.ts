@@ -68,6 +68,7 @@ export class EditarPensamentoComponent implements OnInit {
     conteudo: '',
     autoria: '',
     modelo: '',
+    favorito: false
   };
 
   editarPensamento() {

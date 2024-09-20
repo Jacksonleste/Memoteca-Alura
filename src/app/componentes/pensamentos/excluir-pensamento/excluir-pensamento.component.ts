@@ -31,10 +31,10 @@ export class ExcluirPensamentoComponent implements OnInit {
     conteudo: '',
     autoria: '',
     modelo: '',
+    favorito: false
   };
 
   excluirPensamento() {
-    console.log(this.pensamento.id);
     if (this.pensamento.id) {
       this.service.excluirPensamento(this.pensamento.id).subscribe(() => {
         this.router.navigate(['/pensamento/listar']);
