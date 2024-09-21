@@ -28,6 +28,12 @@ export class ListarPensamentoComponent {
   constructor(private service: PensamentoService) {}
 
   ngOnInit(): void {
+    this.listarPensamentos();
+  }
+
+  listarPensamentos() {
+    this.pagina = 1;
+    this.haMaisPensamentos = true;
     this.service
       .listarPensamentos(this.pagina)
       .subscribe((pensamentos: Pensamento[]) => {
@@ -51,6 +57,16 @@ export class ListarPensamentoComponent {
     this.haMaisPensamentos = true;
     this.service
       .listarPensamentos(this.pagina, this.filtro)
+      .subscribe((pensamentos) => {
+        this.listaPensamentos = pensamentos;
+      });
+  }
+
+  verFavoritos() {
+    this.pagina = 1;
+    this.haMaisPensamentos = true;
+    this.service
+      .listarPensamentosFavoritos(this.pagina, this.filtro)
       .subscribe((pensamentos) => {
         this.listaPensamentos = pensamentos;
       });

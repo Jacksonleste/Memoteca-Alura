@@ -12,13 +12,17 @@
       <img src="/assets/imagens/lupa.png" alt="Lupa Azul" />
     </div>
     <h2 class="ff-inter">Meu mural</h2>
-    <button
-      [routerLink]="['/pensamento/criar']"
-      routerLinkActive="router-link-active"
-      class="botao"
-    >
-      Adicionar pensamento
-    </button>
+    <div class="botoes">
+      <button class="botao" (click)="listarPensamentos()">Meu Mural</button>
+      <button class="botao" (click)="verFavoritos()">Ver Favoritos</button>
+      <button
+        [routerLink]="['/pensamento/criar']"
+        routerLinkActive="router-link-active"
+        class="botao"
+      >
+        Adicionar pensamento
+      </button>
+    </div>
   </header>
   <div class="mural" *ngIf="listaPensamentos.length > 0; else semPensamentos">
     <app-pensamento

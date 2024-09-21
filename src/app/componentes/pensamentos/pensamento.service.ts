@@ -52,4 +52,22 @@ export class PensamentoService {
     pensamento.favorito = !pensamento.favorito;
     return this.http.put<Pensamento>(api, pensamento);
   }
+
+  listarPensamentosFavoritos(
+    pagina: number,
+    filtro: string = ''
+  ): Observable<Pensamento[]> {
+    const limitePagina = 9;
+
+    let params = new HttpParams()
+      .set('_page', pagina)
+      .set('_limit', limitePagina)
+      .set('favorito', true);
+    if (filtro.trim().length > 2) {
+      console.log(filtro);
+      params = params.set('q', filtro);
+    }
+
+    return this.http.get<Pensamento[]>(this.API, { params });
+  }
 }
