@@ -4,24 +4,152 @@
       "id": "7fb4",
       "conteudo": "Com grandes poderes vem grandes responsabilidades",
       "autoria": "Ben Parker",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": "a844",
       "conteudo": "Treinar na solidão, serve apena para perpetuar erros",
-      "autoria": "Geralt de rivia",
-      "modelo": "modelo3"
+      "autoria": "geralt de rivia",
+      "modelo": "modelo2",
+      "favorito": true
     },
     {
       "conteudo": "Faça ou não faça. Tentativa não há",
       "autoria": "Yoda",
       "modelo": "modelo1",
-      "id": "BrSm4FF"
+      "id": "BrSm4FF",
+      "favorito": false
     },
     {
       "id": "W4JVVVc",
       "conteudo": "Sua falta de fé é perturbadora",
       "autoria": "darth vader",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "id": "E4F5G6H",
+      "conteudo": "Eu sou inevitável.",
+      "autoria": "thanos",
+      "modelo": "modelo1",
+      "favorito": true
+    },
+    {
+      "id": "I7J8K9L",
+      "conteudo": "Eu sou o Batman.",
+      "autoria": "batman",
+      "modelo": "modelo3",
+      "favorito": true
+    },
+    {
+      "id": "M0N1O2P",
+      "conteudo": "A força estará com você. Sempre.",
+      "autoria": "obi-wan kenobi",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "id": "Q3R4S5T",
+      "conteudo": "Eu sou o vingador mais forte!",
+      "autoria": "hulk",
+      "modelo": "modelo1",
+      "favorito": true
+    },
+    {
+      "id": "U6V7W8X",
+      "conteudo": "Que a Força esteja com você.",
+      "autoria": "yoda",
+      "modelo": "modelo3",
+      "favorito": true
+    },
+    {
+      "id": "Y9Z0A1B",
+      "conteudo": "Dattebayo!",
+      "autoria": "naruto uzumaki",
+      "modelo": "modelo1"
+    },
+    {
+      "id": "C2D3E4F",
+      "conteudo": "Não importa o quão profundo é o desespero, eu sempre sigo em frente!",
+      "autoria": "eren jaeger",
+      "modelo": "modelo2",
+      "favorito": false
+    },
+    {
+      "id": "G5H6I7J",
+      "conteudo": "Mesmo que as probabilidades estejam contra nós, eu lutarei.",
+      "autoria": "tanjiro kamado",
+      "modelo": "modelo3"
+    },
+    {
+      "id": "K8L9M0N",
+      "conteudo": "Respire fundo e lembre-se, o que está certo nem sempre é fácil.",
+      "autoria": "tanjiro kamado",
+      "modelo": "modelo1",
+      "favorito": false
+    },
+    {
+      "id": "O1P2Q3R",
+      "conteudo": "Eu sou vingança, eu sou a noite!",
+      "autoria": "batman",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "id": "S4T5U6V",
+      "conteudo": "Seja a mudança que você quer ver no mundo.",
+      "autoria": "iron man",
+      "modelo": "modelo3"
+    },
+    {
+      "id": "W7X8Y9Z",
+      "conteudo": "Eu sou o que resta.",
+      "autoria": "darth vader",
+      "modelo": "modelo1",
+      "favorito": false
+    },
+    {
+      "id": "A0B1C2D",
+      "conteudo": "Acreditar em si mesmo é o primeiro passo para se tornar forte.",
+      "autoria": "rock lee",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "id": "E3F4G5H",
+      "conteudo": "O que é a vida sem um pouco de risco?",
+      "autoria": "thor",
+      "modelo": "modelo1"
+    },
+    {
+      "id": "I6J7K8L",
+      "conteudo": "Se ninguém te estender a mão, erga-se sozinho.",
+      "autoria": "mikasa ackerman",
+      "modelo": "modelo3"
+    },
+    {
+      "id": "M9N0O1P",
+      "conteudo": "A vida é o que acontece enquanto você está ocupado fazendo outros planos.",
+      "autoria": "iron man",
+      "modelo": "modelo2"
+    },
+    {
+      "id": "Q2R3S4T",
+      "conteudo": "A vida sem arrependimentos não tem sentido.",
+      "autoria": "levi ackerman",
+      "modelo": "modelo1"
+    },
+    {
+      "id": "U5V6W7X",
+      "conteudo": "A chave para ser um herói não é nunca cair, mas sempre se levantar.",
+      "autoria": "deku",
+      "modelo": "modelo3"
+    },
+    {
+      "id": "Y8Z9A0B",
+      "conteudo": "Você é o herói da sua própria história.",
+      "autoria": "thor",
       "modelo": "modelo2"
     }
   ]
