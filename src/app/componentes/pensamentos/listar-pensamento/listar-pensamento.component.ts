@@ -24,6 +24,7 @@ export class ListarPensamentoComponent {
   pagina: number = 1;
   haMaisPensamentos: boolean = true;
   filtro: string = '';
+  favoritos: boolean = false;
 
   constructor(private service: PensamentoService) {}
 
@@ -35,7 +36,7 @@ export class ListarPensamentoComponent {
     this.pagina = 1;
     this.haMaisPensamentos = true;
     this.service
-      .listarPensamentos(this.pagina)
+      .listarPensamentos(this.pagina, this.filtro, this.favoritos)
       .subscribe((pensamentos: Pensamento[]) => {
         this.listaPensamentos = pensamentos;
       });
@@ -43,7 +44,7 @@ export class ListarPensamentoComponent {
 
   carregarMaisPensamentos() {
     this.service
-      .listarPensamentos(++this.pagina, this.filtro)
+      .listarPensamentos(++this.pagina, this.filtro, this.favoritos)
       .subscribe((pensamentos: Pensamento[]) => {
         this.listaPensamentos.push(...pensamentos);
         if (pensamentos.length == 0) {
@@ -55,20 +56,13 @@ export class ListarPensamentoComponent {
   buscarPensamentos() {
     this.pagina = 1;
     this.haMaisPensamentos = true;
-    this.service
-      .listarPensamentos(this.pagina, this.filtro)
-      .subscribe((pensamentos) => {
-        this.listaPensamentos = pensamentos;
-      });
+    this.listarPensamentos();
   }
 
   verFavoritos() {
+    this.favoritos = true;
     this.pagina = 1;
     this.haMaisPensamentos = true;
-    this.service
-      .listarPensamentosFavoritos(this.pagina, this.filtro)
-      .subscribe((pensamentos) => {
-        this.listaPensamentos = pensamentos;
-      });
+    this.listarPensamentos();
   }
 }
