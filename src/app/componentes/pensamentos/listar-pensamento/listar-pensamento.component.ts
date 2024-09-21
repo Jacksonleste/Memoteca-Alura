@@ -25,6 +25,7 @@ export class ListarPensamentoComponent {
   haMaisPensamentos: boolean = true;
   filtro: string = '';
   favoritos: boolean = false;
+  listaFavoritos: Pensamento[] = [];
 
   constructor(private service: PensamentoService) {}
 
@@ -32,13 +33,21 @@ export class ListarPensamentoComponent {
     this.listarPensamentos();
   }
 
-  listarPensamentos() {
+  listarTodosPensamentos() {
     this.pagina = 1;
     this.haMaisPensamentos = true;
+    this.favoritos = false;
+    this.listarPensamentos();
+  }
+
+  listarPensamentos() {
     this.service
       .listarPensamentos(this.pagina, this.filtro, this.favoritos)
       .subscribe((pensamentos: Pensamento[]) => {
         this.listaPensamentos = pensamentos;
+        if (this.favoritos) {
+          this.listaFavoritos = pensamentos;
+        }
       });
   }
 

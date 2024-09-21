@@ -13,6 +13,7 @@ import { PensamentoService } from '../pensamento.service';
 })
 export class PensamentoComponent {
   @Input() pensamento!: Pensamento;
+  @Input() listaFavoritos!: Pensamento[];
 
   constructor(private router: Router, private service: PensamentoService) {}
 
@@ -32,6 +33,7 @@ export class PensamentoComponent {
   favoritarItem() {
     this.service.alternarFavorito(this.pensamento).subscribe(() => {
       this.router.navigate(['/pensamento/listar']);
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pensamento), 1);
     });
   }
 }

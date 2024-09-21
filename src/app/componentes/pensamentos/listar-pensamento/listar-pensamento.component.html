@@ -13,7 +13,7 @@
     </div>
     <h2 class="ff-inter">Meu mural</h2>
     <div class="botoes">
-      <button class="botao" (click)="listarPensamentos()">Meu Mural</button>
+      <button class="botao" (click)="listarTodosPensamentos()">Meu Mural</button>
       <button class="botao" (click)="verFavoritos()">Ver Favoritos</button>
       <button
         [routerLink]="['/pensamento/criar']"
@@ -28,6 +28,7 @@
     <app-pensamento
       *ngFor="let pensamento of listaPensamentos"
       [pensamento]="pensamento"
+      [listaFavoritos]="listaFavoritos"
     ></app-pensamento>
   </div>
   <app-botao-carregar-mais
